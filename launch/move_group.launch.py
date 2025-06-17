@@ -13,6 +13,5 @@ def generate_launch_description():
         os.environ["DISPLAY"] = ''
 
     moveit_config = MoveItConfigsBuilder("spot", package_name="spot_gen3_moveit").planning_pipelines(
-            pipelines=["ompl"]
-        ).to_moveit_configs()
+            pipelines=["pilz_industrial_motion_planner"]).to_moveit_configs()
     return generate_move_group_launch(moveit_config)
